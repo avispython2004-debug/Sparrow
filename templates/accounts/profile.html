@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile | MyStore{% endblock %}
+
+{% block content %}
+<div class="card auth-card">
+    <h2>My Profile</h2>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email|default:"Not provided" }}</p>
+    <p><strong>Date joined:</strong> {{ user.date_joined|date:"F j, Y" }}</p>
+    <p><a href="{% url 'order_list' %}">View my orders</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Order {{ order.order_number }} | MyStore{% endblock %}
+
+{% block content %}
+
+<h1>Order {{ order.order_number }}</h1>
+
+<div class="checkout-layout">
+    <div class="card">
+        <h2>Customer Information</h2>
+        <p><strong>Name:</strong> {{ order.full_name }}</p>
+        <p><strong>Email:</strong> {{ order.email }}</p>
+        <p><strong>Phone:</strong> {{ order.phone }}</p>
+        <p><strong>Address:</strong> {{ order.address }}</p>
+        <p><strong>City/State:</strong> {{ order.city }}, {{ order.state }} {{ order.postal_code }}</p>
+        <hr>
+        <p><strong>Status:</strong> <span class="status-badge">{{ order.get_status_display }}</span></p>
+        <p><strong>Date:</strong> {{ order.created_at|date:"F j, Y, g:i a" }}</p>
+    </div>
+
+    <div class="card">
+        <h2>Items</h2>
+        {% for item in order.items.all %}
+            <div class="summary-row">
+                <span>{{ item.product.name }} &times; {{ item.quantity }} @ ${{ item.price }}</span>
+                <span>${{ item.subtotal }}</span>
+            </div>
+        {% endfor %}
+        <hr>
+        <h3>Total: ${{ order.total_amount }}</h3>
+    </div>
+</div>
+
+<a href="{% url 'order_list' %}" class="btn btn-outline" style="margin-top: 1.5rem;">&laquo; Back to My Orders</a>
+
+{% endblock %}

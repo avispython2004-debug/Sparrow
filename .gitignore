@@ -1,0 +1,20 @@
+# Secrets & config
+.env
+*.pem
+
+# Database & user data
+db.sqlite3
+media/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+env/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+*.swp

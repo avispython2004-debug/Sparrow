@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Shop | MyStore{% endblock %}
+
+{% block content %}
+
+<h1>Shop</h1>
+
+<form method="get" class="shop-controls">
+    <input type="text" name="q" value="{{ query }}" placeholder="Search products..." class="search-input">
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<div class="category-filters">
+    <a href="{% url 'product_list' %}{% if query %}?q={{ query }}{% endif %}"
+       class="filter-chip {% if not active_category %}active{% endif %}">All</a>
+    {% for category in categories %}
+        <a href="?category={{ category.slug }}{% if query %}&q={{ query }}{% endif %}"
+           class="filter-chip {% if active_category and active_category.slug == category.slug %}active{% endif %}">
+            {{ category.name }}
+        </a>
+    {% endfor %}
+</div>
+
+{% if active_category %}
+    <p class="filter-note">Showing category: <strong>{{ active_category.name }}</strong></p>
+{% endif %}
+
+{% if products %}
+    <div class="grid">
+        {% for product in products %}
+            <div class="card product-card">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img">
+                {% else %}
+                    <div class="product-img placeholder">No image</div>
+                {% endif %}
+                <h3>{{ product.name }}</h3>
+                <p class="muted">{{ product.category.name }}</p>
+                <p class="price">${{ product.price }}</p>
+                {% if product.available and product.stock > 0 %}
+                    <p class="in-stock">In stock ({{ product.stock }})</p>
+                {% else %}
+                    <p class="out-of-stock">Out of stock</p>
+                {% endif %}
+                <div class="card-actions">
+                    <a href="{% url 'product_detail' product.slug %}" class="btn btn-outline">View Details</a>
+                    <form method="post" action="{% url 'cart_add' product.id %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}{% if active_category %}&category={{ active_category.slug }}{% endif %}" class="btn btn-outline">&laquo; Prev</a>
+        {% endif %}
+        <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}{% if active_category %}&category={{ active_category.slug }}{% endif %}" class="btn btn-outline">Next &raquo;</a>
+        {% endif %}
+    </div>
+{% else %}
+    <div class="card empty-state">
+        <p>No products found{% if query %} for "{{ query }}"{% endif %}.</p>
+    </div>
+{% endif %}
+
+{% endblock %}

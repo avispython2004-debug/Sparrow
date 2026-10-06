@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Register | MyStore{% endblock %}
+
+{% block content %}
+<div class="card auth-card">
+    <h2>Create Account</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}<small class="help-text">{{ field.help_text }}</small>{% endif %}
+                {% for error in field.errors %}
+                    <p class="field-error">{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    <p class="auth-switch">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Login | MyStore{% endblock %}
+
+{% block content %}
+<div class="card auth-card">
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% for error in field.errors %}
+                    <p class="field-error">{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            <p class="field-error">{{ error }}</p>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <p class="auth-switch">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+</div>
+{% endblock %}

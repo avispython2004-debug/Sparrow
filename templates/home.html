@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}MyStore | Home{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="hero card">
+    <h1>Welcome to MyStore</h1>
+    <p>Discover quality products at great prices. Fast delivery, secure checkout, and a shopping experience you'll love.</p>
+    <a href="{% url 'product_list' %}" class="btn btn-primary">Shop Now</a>
+</section>
+
+<!-- Categories -->
+<section class="section">
+    <h2>Categories</h2>
+    {% if categories %}
+        <div class="grid">
+            {% for category in categories %}
+                <div class="card category-card">
+                    <h3>{{ category.name }}</h3>
+                    <p>{{ category.description|default:"Browse this category"|truncatewords:12 }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="card empty-state"><p>No categories available yet. Check back soon!</p></div>
+    {% endif %}
+</section>
+
+<!-- Featured Products -->
+<section class="section">
+    <h2>Featured Products</h2>
+    {% if featured_products %}
+        <div class="grid">
+            {% for product in featured_products %}
+                <div class="card product-card">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img">
+                    {% else %}
+                        <div class="product-img placeholder">No image</div>
+                    {% endif %}
+                    <h3>{{ product.name }}</h3>
+                    <p class="price">${{ product.price }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="card empty-state"><p>No featured products right now.</p></div>
+    {% endif %}
+</section>
+
+<!-- Latest Products -->
+<section class="section">
+    <h2>Latest Products</h2>
+    {% if latest_products %}
+        <div class="grid">
+            {% for product in latest_products %}
+                <div class="card product-card">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img">
+                    {% else %}
+                        <div class="product-img placeholder">No image</div>
+                    {% endif %}
+                    <h3>{{ product.name }}</h3>
+                    <p class="price">${{ product.price }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="card empty-state"><p>No products available yet. Check back soon!</p></div>
+    {% endif %}
+</section>
+
+<!-- CTA -->
+<section class="cta card">
+    <h2>Ready to start shopping?</h2>
+    <p>Create an account to track orders, save favorites, and check out faster.</p>
+    <a href="{% url 'register' %}" class="btn btn-primary">Register Now</a>
+</section>
+
+{% endblock %}

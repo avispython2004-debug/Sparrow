@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Order Confirmed | MyStore{% endblock %}
+
+{% block content %}
+
+<div class="card auth-card">
+    <h2>Order Placed Successfully!</h2>
+    <p>Thank you, {{ order.full_name }}. Your order has been confirmed.</p>
+    <p><strong>Order number:</strong> {{ order.order_number }}</p>
+    <p><strong>Order total:</strong> ${{ order.total_amount }}</p>
+    <p><strong>Order date:</strong> {{ order.created_at|date:"F j, Y, g:i a" }}</p>
+    <div class="cart-actions">
+        <a href="{% url 'order_detail' order.order_number %}" class="btn btn-outline">View Order</a>
+        <a href="{% url 'product_list' %}" class="btn btn-primary">Continue Shopping</a>
+    </div>
+</div>
+
+{% endblock %}

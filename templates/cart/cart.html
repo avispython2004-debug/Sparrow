@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Cart | MyStore{% endblock %}
+
+{% block content %}
+
+<h1>Shopping Cart</h1>
+
+{% if items %}
+    <div class="cart-list">
+        {% for item in items %}
+            <div class="card cart-item">
+                <div class="cart-item-info">
+                    <h3>{{ item.product.name }}</h3>
+                    <p class="muted">{{ item.product.category.name }} &middot; ${{ item.product.price }} each</p>
+                    <p class="muted">{{ item.product.stock }} in stock</p>
+                </div>
+                <div class="cart-qty-form">
+                    <form method="post" action="{% url 'cart_update' item.product.id %}">
+                        {% csrf_token %}
+                        <button type="submit" name="quantity" value="{{ item.quantity|add:'-1' }}" class="btn btn-outline qty-btn">-</button>
+                    </form>
+                    <form method="post" action="{% url 'cart_update' item.product.id %}" class="cart-update-form">
+                        {% csrf_token %}
+                        <label for="qty-{{ item.product.id }}" class="sr-only">Qty</label>
+                        <input type="number" id="qty-{{ item.product.id }}" name="quantity" value="{{ item.quantity }}" min="0" max="{{ item.product.stock }}">
+                        <button type="submit" class="btn btn-outline">Update</button>
+                    </form>
+                    <form method="post" action="{% url 'cart_update' item.product.id %}">
+                        {% csrf_token %}
+                        <button type="submit" name="quantity" value="{{ item.quantity|add:'1' }}" class="btn btn-outline qty-btn">+</button>
+                    </form>
+                </div>
+                <p class="cart-subtotal">${{ item.subtotal }}</p>
+                <form method="post" action="{% url 'cart_remove' item.product.id %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline btn-danger">Remove</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="card cart-summary">
+        <h2>Total: ${{ total }}</h2>
+        <div class="cart-actions">
+            <a href="{% url 'product_list' %}" class="btn btn-outline">Continue Shopping</a>
+            <a href="{% url 'checkout' %}" class="btn btn-primary">Proceed to Checkout</a>
+        </div>
+    </div>
+{% else %}
+    <div class="card empty-state">
+        <p>Your cart is empty.</p>
+        <a href="{% url 'product_list' %}" class="btn btn-primary">Continue Shopping</a>
+    </div>
+{% endif %}
+
+{% endblock %}

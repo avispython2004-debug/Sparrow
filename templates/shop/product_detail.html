@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ product.name }} | MyStore{% endblock %}
+
+{% block content %}
+
+<div class="product-detail">
+    <div>
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img">
+        {% else %}
+            <div class="product-img placeholder">No image available</div>
+        {% endif %}
+    </div>
+    <div>
+        <p class="muted">{{ product.category.name }}</p>
+        <h1>{{ product.name }}</h1>
+        <p class="price">${{ product.price }}</p>
+        {% if product.available and product.stock > 0 %}
+            <p class="in-stock">In stock ({{ product.stock }} available)</p>
+        {% else %}
+            <p class="out-of-stock">Out of stock</p>
+        {% endif %}
+        <p>{{ product.description|default:"No description available for this product." }}</p>
+        <div class="card-actions">
+            <form method="post" action="{% url 'cart_add' product.id %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Add to Cart</button>
+            </form>
+            <a href="{% url 'product_list' %}" class="btn btn-outline">Back to Shop</a>
+        </div>
+    </div>
+</div>
+
+{% if related %}
+<section class="section" style="margin-top: 2.5rem;">
+    <h2>You may also like</h2>
+    <div class="grid">
+        {% for item in related %}
+            <div class="card product-card">
+                {% if item.image %}
+                    <img src="{{ item.image.url }}" alt="{{ item.name }}" class="product-img">
+                {% else %}
+                    <div class="product-img placeholder">No image</div>
+                {% endif %}
+                <h3>{{ item.name }}</h3>
+                <p class="price">${{ item.price }}</p>
+                <div class="card-actions">
+                    <a href="{% url 'product_detail' item.slug %}" class="btn btn-outline">View Details</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{% endblock %}

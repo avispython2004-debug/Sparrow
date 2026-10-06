@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}My Orders | MyStore{% endblock %}
+
+{% block content %}
+
+<h1>My Orders</h1>
+
+{% if orders %}
+    <div class="cart-list">
+        {% for order in orders %}
+            <div class="card cart-item">
+                <div class="cart-item-info">
+                    <h3>{{ order.order_number }}</h3>
+                    <p class="muted">{{ order.created_at|date:"F j, Y" }}</p>
+                </div>
+                <p class="price">${{ order.total_amount }}</p>
+                <span class="status-badge">{{ order.get_status_display }}</span>
+                <a href="{% url 'order_detail' order.order_number %}" class="btn btn-outline">View Details</a>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="card empty-state">
+        <p>You haven't placed any orders yet.</p>
+        <a href="{% url 'product_list' %}" class="btn btn-primary">Start Shopping</a>
+    </div>
+{% endif %}
+
+{% endblock %}

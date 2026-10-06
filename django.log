@@ -1,0 +1,192 @@
+[ERROR] 2026-10-06 10:48:42,811 django.request: Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 57, in _get_backend_from_user
+    backend = backend or user.backend
+                         ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'backend'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\Sparrow\accounts\views.py", line 17, in register
+    login(request, user)
+    ~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 191, in login
+    backend = _get_backend_from_user(user=user, backend=backend)
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 63, in _get_backend_from_user
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: You have multiple authentication backends configured and therefore must provide the `backend` argument or set the `backend` attribute on the user.
+[ERROR] 2026-10-06 10:48:51,604 django.request: Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 57, in _get_backend_from_user
+    backend = backend or user.backend
+                         ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'backend'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\Sparrow\accounts\views.py", line 17, in register
+    login(request, user)
+    ~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 191, in login
+    backend = _get_backend_from_user(user=user, backend=backend)
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 63, in _get_backend_from_user
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: You have multiple authentication backends configured and therefore must provide the `backend` argument or set the `backend` attribute on the user.
+[ERROR] 2026-10-06 10:49:09,809 django.request: Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 57, in _get_backend_from_user
+    backend = backend or user.backend
+                         ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'backend'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\Sparrow\accounts\views.py", line 17, in register
+    login(request, user)
+    ~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 191, in login
+    backend = _get_backend_from_user(user=user, backend=backend)
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 63, in _get_backend_from_user
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: You have multiple authentication backends configured and therefore must provide the `backend` argument or set the `backend` attribute on the user.
+[ERROR] 2026-10-06 10:49:20,312 django.request: Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 57, in _get_backend_from_user
+    backend = backend or user.backend
+                         ^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'backend'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\Sparrow\accounts\views.py", line 17, in register
+    login(request, user)
+    ~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 191, in login
+    backend = _get_backend_from_user(user=user, backend=backend)
+  File "C:\Users\Avinash Mali\Downloads\web devolopment\Projects\django_project\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 63, in _get_backend_from_user
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: You have multiple authentication backends configured and therefore must provide the `backend` argument or set the `backend` attribute on the user.
+[INFO] 2026-10-06 11:28:59,461 django.utils.autoreload: Watching for file changes with StatReloader
+[WARNING] 2026-10-06 11:29:04,761 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 11:29:34,767 django.server: "GET /health HTTP/1.1" 404 6453
+[INFO] 2026-10-06 11:30:33,971 django.utils.autoreload: Watching for file changes with StatReloader
+[WARNING] 2026-10-06 11:30:34,783 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 11:31:04,790 django.server: "GET /health HTTP/1.1" 404 6453
+[INFO] 2026-10-06 11:31:04,864 django.server: "GET / HTTP/1.1" 200 7131
+[INFO] 2026-10-06 11:31:04,945 django.server: "GET /static/css/style.css HTTP/1.1" 304 0
+[INFO] 2026-10-06 11:31:04,945 django.server: "GET /media/products/trendy%20jaket.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 11:31:04,946 django.server: "GET /media/products/t.v.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 11:31:04,954 django.server: "GET /static/js/main.js HTTP/1.1" 304 0
+[INFO] 2026-10-06 11:31:04,956 django.server: "GET /media/products/sun%20glases%20and%20hat.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 11:31:04,955 django.server: "GET /media/products/sony%20spiker.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 11:31:04,957 django.server: "GET /media/products/samsung%20s24%20altra.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 11:31:04,957 django.server: "GET /media/products/rich%20loking%20jaket.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 11:31:04,960 django.server: "GET /media/products/PlayStation%205%20.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 11:31:04,965 django.server: "GET /media/products/mirror.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 15:35:42,929 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2026-10-06 15:35:47,244 django.server: "GET / HTTP/1.1" 200 8421
+[WARNING] 2026-10-06 15:35:48,639 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:36:18,655 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:36:48,676 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:37:18,696 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:37:48,713 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:38:18,725 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:38:48,743 django.server: "GET /health HTTP/1.1" 404 6453
+[INFO] 2026-10-06 15:39:14,612 django.server: "GET / HTTP/1.1" 200 8421
+[WARNING] 2026-10-06 15:39:18,755 django.server: "GET /health HTTP/1.1" 404 6453
+[INFO] 2026-10-06 15:40:03,615 django.utils.autoreload: Watching for file changes with StatReloader
+[INFO] 2026-10-06 15:40:08,214 django.server: "GET / HTTP/1.1" 200 8421
+[WARNING] 2026-10-06 15:40:18,777 django.server: "GET /health HTTP/1.1" 404 6453
+[INFO] 2026-10-06 15:40:19,474 django.server: "GET /shop/ HTTP/1.1" 200 12180
+[INFO] 2026-10-06 15:40:19,500 django.server: "GET /media/products/Apple%20macbook.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 15:40:19,501 django.server: "GET /media/products/asthatic%20outfit.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 15:40:19,517 django.server: "GET /media/products/asus%20tuf%20A16.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 15:40:19,517 django.server: "GET /media/products/googlw%2010%20pro.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 15:40:19,518 django.server: "GET /media/products/iphone%2018.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 15:40:19,519 django.server: "GET /media/products/JBL%20high%20sond%20headphone.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 15:40:21,983 django.server: "GET /shop/ HTTP/1.1" 200 12180
+[INFO] 2026-10-06 15:40:24,299 django.server: "GET /shop/ HTTP/1.1" 200 12180
+[INFO] 2026-10-06 15:40:26,160 django.server: "GET /cart/ HTTP/1.1" 200 2653
+[WARNING] 2026-10-06 15:40:48,793 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:41:18,810 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:41:48,827 django.server: "GET /health HTTP/1.1" 404 6453
+[INFO] 2026-10-06 15:41:55,740 django.server: "GET / HTTP/1.1" 200 7131
+[WARNING] 2026-10-06 15:42:18,847 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:42:48,871 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:43:18,892 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:43:48,906 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:44:18,924 django.server: "GET /health HTTP/1.1" 404 6453
+[INFO] 2026-10-06 15:44:43,363 django.server: "GET /shop/ HTTP/1.1" 200 10890
+[WARNING] 2026-10-06 15:44:48,939 django.server: "GET /health HTTP/1.1" 404 6453
+[INFO] 2026-10-06 15:44:50,043 django.server: "GET /shop/?category=accessories HTTP/1.1" 200 9078
+[INFO] 2026-10-06 15:44:50,063 django.server: "GET /media/products/makhar.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 15:44:50,064 django.server: "GET /media/products/Men%20Travel%20Essentials.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 15:44:50,072 django.server: "GET /media/products/Minimalist%20Brown%20Leather%20Watch.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 15:44:55,165 django.server: "GET /shop/?category=electronics HTTP/1.1" 200 11081
+[INFO] 2026-10-06 15:44:55,196 django.server: "GET /media/products/laptop2.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 15:45:03,184 django.server: "GET /shop/?category=fashion HTTP/1.1" 200 8011
+[INFO] 2026-10-06 15:45:03,203 django.server: "GET /media/products/long%20sute.jpg HTTP/1.1" 304 0
+[INFO] 2026-10-06 15:45:04,525 django.server: "GET /shop/?category=home-living HTTP/1.1" 200 3331
+[INFO] 2026-10-06 15:45:06,743 django.server: "GET /shop/?category=laptops HTTP/1.1" 200 6051
+[INFO] 2026-10-06 15:45:08,371 django.server: "GET /shop/?category=phones HTTP/1.1" 200 10716
+[INFO] 2026-10-06 15:45:17,631 django.server: "GET /shop/?category=accessories HTTP/1.1" 200 9078
+[INFO] 2026-10-06 15:45:18,731 django.server: "GET /shop/ HTTP/1.1" 200 10890
+[WARNING] 2026-10-06 15:45:18,952 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:45:48,968 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:46:18,986 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:46:49,002 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:47:19,018 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:47:49,042 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:48:19,065 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:48:49,089 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:49:19,108 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:49:49,138 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:50:19,164 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:50:49,182 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:51:19,199 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:51:49,218 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:52:19,236 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:52:49,254 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:53:19,276 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:53:49,296 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:54:19,315 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:54:49,339 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:55:19,357 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:55:49,379 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:56:19,398 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:56:49,421 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:57:19,441 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:57:49,459 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:58:19,478 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:58:49,496 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:59:19,516 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 15:59:49,536 django.server: "GET /health HTTP/1.1" 404 6453
+[WARNING] 2026-10-06 16:00:19,554 django.server: "GET /health HTTP/1.1" 404 6453
